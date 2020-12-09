@@ -77,15 +77,12 @@ func main() {
 			c = &computer{}
 			code, _ := c.run(program)
 			if code == 0 {
-				fmt.Println("bug found at line ",i+1)
+				fmt.Println("bug found at line ", i+1)
 				break
 			}
 			program[i].op = last
 		}
 	}
 
-
 	fmt.Println(c.acc)
 }
-
-

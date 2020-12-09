@@ -31,7 +31,7 @@ type bagAmount struct {
 var (
 	reContains = regexp.MustCompile(`(?:(?:\s)(\d+)\s(\w+\s\w+)\sbags?(?:,|\.))`)
 	reBag      = regexp.MustCompile(`(.*)\sbags contain`)
-	bags = make(bagsT)
+	bags       = make(bagsT)
 )
 
 func main() {
@@ -83,9 +83,8 @@ func getBagsCount(name string) int {
 	count := 0
 	if bag, ok := bags[name]; ok {
 		for n, ba := range bag.contains {
-			count += ba.count + ( ba.count * getBagsCount(n) )
+			count += ba.count + (ba.count * getBagsCount(n))
 		}
 	}
 	return count
 }
-

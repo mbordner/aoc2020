@@ -11,14 +11,13 @@ type seat struct {
 }
 
 func (s *seat) id() int {
-	return s.row * 8 + s.col
+	return s.row*8 + s.col
 }
 
 func main() {
 	seats := make(map[int]seat)
 
 	lines, _ := file.GetLines("../seats1.txt")
-
 
 	for i := range lines {
 		s := getSeat(lines[i])
@@ -33,7 +32,6 @@ func main() {
 		}
 	}
 
-
 	fmt.Println(max)
 
 }
@@ -45,7 +43,7 @@ func getSeat(bsp string) seat {
 	p2 := 128
 
 	for _, l := range bsp[0:7] {
-		t := (p2 - p1) / 2 + p1
+		t := (p2-p1)/2 + p1
 		if l == 'F' {
 			p2 = t
 		} else if l == 'B' {
@@ -59,7 +57,7 @@ func getSeat(bsp string) seat {
 	p2 = 8
 
 	for _, l := range bsp[7:] {
-		t := (p2 - p1) / 2 + p1
+		t := (p2-p1)/2 + p1
 		if l == 'L' {
 			p2 = t
 		} else if l == 'R' {
