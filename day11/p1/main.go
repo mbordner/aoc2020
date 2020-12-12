@@ -16,16 +16,16 @@ func main() {
 		}
 	}
 
-	occupied := 0
+	occuppied := 0
 	for r, row := range seats {
 		for c := range row {
 			if seats[r][c] == '#' {
-				occupied++
+				occuppied++
 			}
 		}
 	}
 
-	fmt.Println(occupied)
+	fmt.Println(occuppied)
 }
 
 func getNextState(seats [][]byte) (next [][]byte, changes int) {
