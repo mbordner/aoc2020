@@ -1,6 +1,9 @@
 package tile
 
+import "bytes"
+
 type Direction int
+type Directions []Direction
 
 // e, se, sw, w, nw, and ne -- note: no n or s
 const (
@@ -11,6 +14,50 @@ const (
 	NW
 	NE
 )
+
+func (d Direction) String() string {
+	switch d {
+	case E:
+		return "e"
+	case W:
+		return "w"
+	case NE:
+		return "ne"
+	case SE:
+		return "se"
+	case NW:
+		return "nw"
+	case SW:
+		return "sw"
+	}
+	return ""
+}
+
+func (d Direction) Opposite() Direction {
+	switch d {
+	case E:
+		return W
+	case W:
+		return E
+	case NE:
+		return SW
+	case SE:
+		return NW
+	case NW:
+		return SE
+	case SW:
+		return NE
+	}
+	return E
+}
+
+func (dirs Directions) String() string {
+	var buf bytes.Buffer
+	for _, d := range dirs {
+		buf.WriteString(d.String())
+	}
+	return buf.String()
+}
 
 func Simplify(dirs []Direction) []Direction {
 	counts := make(map[Direction]int)

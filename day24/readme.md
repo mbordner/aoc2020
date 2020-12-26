@@ -42,8 +42,6 @@ Go through the renovation crew's list and determine which tiles they need to fli
 
 Your puzzle answer was 232.
 
-The first half of this puzzle is complete! It provides one gold star: *
-
 --- Part Two ---
 The tile floor in the lobby is meant to be a living art exhibit. Every day, the tiles are all flipped according to the following rules:
 
@@ -78,4 +76,8 @@ Day 100: 2208
 After executing this process a total of 100 times, there would be 2208 black tiles facing up.
 
 How many tiles will be black after 100 days?
+
+Your puzzle answer was 3519.
+
+Both parts of this puzzle are complete! They provide two gold stars: **
 ```
